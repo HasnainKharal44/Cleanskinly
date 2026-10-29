@@ -5,14 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cleanskinly | Premium Skincare</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background: #0b0b0b;
       color: #f8f3e8;
       font-family: Arial, sans-serif;
     }
+
     header {
       padding: 22px 7%;
       border-bottom: 1px solid #b99546;
@@ -20,19 +25,52 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo { color: #d8b45a; font-size: 25px; font-weight: bold; }
-    nav a { color: #f8f3e8; margin-left: 20px; text-decoration: none; }
+
+    .logo {
+      color: #d8b45a;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #f8f3e8;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+
     .hero {
-      min-height: 420px;
+      min-height: 470px;
       padding: 75px 8%;
       display: flex;
       align-items: center;
-      background: radial-gradient(ellipse at right, #49391c, #0b0b0b 65%);
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, #0b0b0b 5%, #0b0b0be8 43%, #0b0b0b30 100%),
+        url("https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1600&q=85")
+        center right / cover no-repeat;
     }
-    .hero div { max-width: 600px; }
-    .hero p { color: #d1c8b7; line-height: 1.7; }
-    h1 { font-size: clamp(38px, 6vw, 65px); margin: 15px 0; }
-    .gold { color: #d8b45a; }
+
+    .hero div {
+      max-width: 600px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      color: #d1c8b7;
+      line-height: 1.7;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 65px);
+      margin: 15px 0;
+    }
+
+    .gold {
+      color: #d8b45a;
+    }
+
     .btn {
       display: inline-block;
       background: #d8b45a;
@@ -43,39 +81,120 @@
       font-weight: bold;
       margin-top: 12px;
     }
-    section.products { padding: 45px 7%; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+    section.products {
+      padding: 45px 7%;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
     .card {
       border: 1px solid #594823;
-      padding: 24px;
+      padding: 15px;
       border-radius: 10px;
       background: #171511;
+      overflow: hidden;
     }
+
     .product-art {
-      height: 150px;
-      display: grid;
-      place-items: center;
-      color: #d8b45a;
-      font-size: 22px;
-      background: linear-gradient(145deg, #33291a, #101010);
+      height: 240px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 15px;
+      color: #fff;
+      font-size: 17px;
+      font-weight: bold;
+      letter-spacing: 2px;
       border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
     }
-    .price { color: #d8b45a; font-weight: bold; }
+
+    .product-art::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.02) 75%
+      );
+    }
+
+    .product-art span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-one {
+      background-image: url("https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .product-two {
+      background-image: url("https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .product-three {
+      background-image: url("https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=900&q=85");
+    }
+
+    .price {
+      color: #d8b45a;
+      font-weight: bold;
+    }
+
     footer {
       text-align: center;
       padding: 25px;
       border-top: 1px solid #594823;
       color: #c8c0b2;
     }
+
     @media (max-width: 650px) {
-      header { padding: 18px; flex-wrap: wrap; gap: 12px; }
-      nav a { margin-left: 0; margin-right: 12px; }
-      .hero { padding: 55px 22px; }
-      .cards { grid-template-columns: 1fr; }
-      section.products { padding: 35px 20px; }
+      header {
+        padding: 18px;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 12px;
+      }
+
+      .hero {
+        padding: 55px 22px;
+        min-height: 430px;
+        background-position: 60% center;
+      }
+
+      .hero div {
+        max-width: 100%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section.products {
+        padding: 35px 20px;
+      }
+
+      .product-art {
+        height: 260px;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">✦ Cleanskinly</div>
@@ -90,8 +209,16 @@
     <section class="hero" id="home">
       <div>
         <p class="gold">YOUR SKINCARE, YOUR RITUAL</p>
-        <h1>Discover Your <span class="gold">Natural Glow.</span></h1>
-        <p>Explore the Cleanskinly collection. Thoughtful everyday care with a premium touch.</p>
+
+        <h1>
+          Discover Your <span class="gold">Natural Glow.</span>
+        </h1>
+
+        <p>
+          Explore the Cleanskinly collection. Thoughtful everyday
+          care with a premium touch.
+        </p>
+
         <a class="btn" href="#shop">Explore Collection →</a>
       </div>
     </section>
@@ -99,31 +226,45 @@
     <section class="products" id="shop">
       <p class="gold">THE COLLECTION</p>
       <h2>Our Products</h2>
+
       <div class="cards">
+
         <article class="card">
-          <div class="product-art">CLEANSKINLY</div>
+          <div class="product-art product-one">
+            <span>CLEANSKINLY</span>
+          </div>
           <h3>Daily Care</h3>
           <p>Everyday cleansing essentials.</p>
           <p class="price">Price to be confirmed</p>
         </article>
+
         <article class="card">
-          <div class="product-art">CLEANSKINLY</div>
+          <div class="product-art product-two">
+            <span>CLEANSKINLY</span>
+          </div>
           <h3>Gentle Care</h3>
           <p>A simple addition to your routine.</p>
           <p class="price">Price to be confirmed</p>
         </article>
+
         <article class="card">
-          <div class="product-art">CLEANSKINLY</div>
+          <div class="product-art product-three">
+            <span>CLEANSKINLY</span>
+          </div>
           <h3>Premium Care</h3>
           <p>Discover our upcoming collection.</p>
           <p class="price">Price to be confirmed</p>
         </article>
+
       </div>
     </section>
 
     <section id="about" style="padding:35px 7%;line-height:1.8">
       <h2 class="gold">About Cleanskinly</h2>
-      <p>We are building a simple, clear and customer-friendly skincare shopping experience in Pakistan.</p>
+      <p>
+        We are building a simple, clear and customer-friendly
+        skincare shopping experience in Pakistan.
+      </p>
     </section>
   </main>
 
